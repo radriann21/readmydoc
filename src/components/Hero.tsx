@@ -10,7 +10,7 @@ export const Hero = () => {
         <p className="my-4 text-gray-500 text-lg">
           Select a template, modify the template and create your readme in seconds.
         </p>
-        <Link className="mt-5 p-2 rounded-md bg-blue-400 text-white" href="/editor">
+        <Link className="mt-5 px-6 py-2 text-lg rounded-md bg-blue-400 text-white" href="/editor">
           Go to our editor
         </Link>
       </div>
