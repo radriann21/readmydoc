@@ -1,5 +1,5 @@
 
-# {{ projectName }}
+# Project Name
 
 A web app that allows to create a password based on certain parameters and have an visualization representation of the strength of the password.
 
@@ -8,13 +8,13 @@ A web app that allows to create a password based on certain parameters and have 
 Clone the project
 
 ```bash
-  git clone https://github.com/{{ username }}/{{ projectName }}.git
+  git clone https://github.com/username/project-name.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd {{ projectName }}
+  cd projectname
 ```
 
 Install dependencies
@@ -51,4 +51,4 @@ Only unit tests of functions.
 
 ## Authors
 
-- [@{{ username }}](https://www.github.com/{{ username }})  
+- [@username](https://www.github.com/username)  

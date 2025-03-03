@@ -1,4 +1,5 @@
 "use client"
+import { toast } from "react-hot-toast"
 import { templates } from "@/utils/templates"
 import { useMarkdownEditorContext } from "@/providers/MarkdownEditorStoreProvider"
 
@@ -9,12 +10,23 @@ export const TemplatesComponent = () => {
   const handleClick = async (template: string) => {
     try {
       const res = await fetch(template)
-      if (!res.ok) throw new Error('Failed to fetch template')
+      if (!res.ok) {
+        toast('Failed to load template', {
+          position: 'bottom-center',
+          style: { backgroundColor: "#e02424", color: "#ffffff" }
+        })
+        return 
+      }
       const markdown = await res.text()
       setMardown(markdown)
     } catch (error) {
-      console.error(error)
-      return ""
+      if (error instanceof Error) {
+        toast(`Error to find template ${error.message}`, {
+          position: 'bottom-center',
+          style: { backgroundColor: "#e02424", color: "#ffffff" }
+        })   
+      }
+     return 
     }
   }
 
@@ -24,7 +36,7 @@ export const TemplatesComponent = () => {
       <ul className="w-full mt-2 list-none space-y-2">
         {
           templates.map((template) => (
-            <li onClick={() => handleClick(template.file)} key={template.id} className="w-full p-2 rounded-md shadow-md border-1 border-gray-400 cursor-pointer transition-shadow duration-300 hover:shadow-none">
+            <li onClick={() => handleClick(template.file)} key={template.id} className="text-sm font-bold w-full p-2 rounded-md shadow-sm shadow-blue-400/40 border-1 border-gray-400 cursor-pointer transition-shadow duration-300 hover:shadow-none hover:border-blue-400">
               {template.name}
             </li>
           ))

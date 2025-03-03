@@ -8,12 +8,12 @@ import { Toaster } from "react-hot-toast";
 
 export default function EditorPage() {
   return (
-    <main className="max-w-full mx-auto h-screen font-cabin">
+    <main className="max-w-full mx-auto h-[85vh] font-cabin">
       <Toaster />
       <Header />
-      <section className="w-full h-screen flex">
+      <section className="w-full h-full flex">
         <TemplatesComponent />
-        <section className="w-full h-screen flex">
+        <section className="w-full h-full flex">
           <EditorComponent />
           <PreviewContainer />
         </section>

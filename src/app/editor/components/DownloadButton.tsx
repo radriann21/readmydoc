@@ -16,9 +16,9 @@ export const DownloadButton = () => {
   }
 
   return (
-    <button onClick={handleDownload} className="inline-flex items-center px-4 py-2 rounded-md border-1 cursor-pointer bg-transparent transition-colors duration-300 hover:bg-blue-400/20">
+    <button onClick={handleDownload} className="inline-flex items-center px-4 py-2 rounded-md border-1 cursor-pointer bg-transparent transition-colors duration-300 hover:bg-blue-300/10 text-blue-400">
       Download File
-      <Download className="ml-2 h-5 w-5" />
+      <Download className="ml-2 h-5 w-5 stroke-blue-400" />
     </button>
   )
 }
