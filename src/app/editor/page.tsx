@@ -3,6 +3,7 @@
 import { Header } from "./components/Header";
 import { EditorComponent } from "./components/EditorComponent";
 import { PreviewContainer } from "./components/PreviewContainer";
+import { TemplatesComponent } from "./components/TemplatesComponent";
 import { Toaster } from "react-hot-toast";
 
 export default function EditorPage() {
@@ -11,9 +12,7 @@ export default function EditorPage() {
       <Toaster />
       <Header />
       <section className="w-full h-screen flex">
-        <aside className="w-[20%] border-r-1 p-2">
-          <h2>Templates</h2>
-        </aside>
+        <TemplatesComponent />
         <section className="w-full h-screen flex">
           <EditorComponent />
           <PreviewContainer />
