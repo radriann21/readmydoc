@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Cabin } from "next/font/google";
+import { MardownEditorProvider } from "@/providers/MarkdownEditorStoreProvider";
 import "./globals.css";
+import "github-markdown-css/github-markdown-light.css"
 
 const cabin = Cabin({
   variable: "--font-cabin",
@@ -19,8 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${cabin.variable} max-w-full min-h-screen`}>
-        {children}
+      <body suppressHydrationWarning className={`${cabin.variable} max-w-full min-h-screen`}>
+        <MardownEditorProvider>
+          {children}
+        </MardownEditorProvider>
       </body>
     </html>
   );
