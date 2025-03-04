@@ -3,7 +3,7 @@ import { Hero } from "@/components/Hero";
 
 export default function Home() {
   return (
-    <main className="max-w-7xl mx-auto h-full py-12 font-cabin">
+    <main className="max-w-7xl mx-auto h-full font-cabin">
       <Header />
       <Hero />
     </main>

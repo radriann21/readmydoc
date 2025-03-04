@@ -1,5 +1,8 @@
 # API Name
 
+## Description
+
+This API provides access to the latest news and updates from our organization.
 
 ## Authentication
 

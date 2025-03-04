@@ -23,5 +23,20 @@ export const templates = [
     id: 5,
     name: "Developing Tool README",
     file: "/templates/developing-tool.md"
+  },
+  {
+    id: 6,
+    name: "Web Application README",
+    file: "/templates/web-app-readme.md"
+  },
+  {
+    id: 7,
+    name: "Library SDK README",
+    file: "/templates/library-sdk-readme.md"
+  },
+  {
+    id: 8,
+    name: "Mobile App README",
+    file: "/templates/mobile-app-readme.md"
   }
 ]
