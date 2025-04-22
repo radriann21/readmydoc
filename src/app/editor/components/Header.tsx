@@ -8,7 +8,7 @@ export const Header = () => {
   const { setDocumentTitle } = useMarkdownEditorContext((state) => state);
 
   return (
-    <header className="w-full flex items-center justify-between py-4 px-5 md:px-8 border-b-1 border-slate-300">
+    <header className="w-full flex items-center justify-between py-4 px-5 md:px-8">
       <section className="flex items-center">
         <Link href="/">
           <ArrowLeft className="w-4 h-4 sm:hidden" />

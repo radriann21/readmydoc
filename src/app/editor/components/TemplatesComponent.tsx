@@ -32,10 +32,10 @@ export const TemplatesComponent = () => {
   return (
     <details className="dropdown">
       <summary className="text-sm uppercase tracking-wider cursor-pointer">Templates</summary>
-      <ul className="menu dropdown-content z-1 space-y-1 text-sm">
+      <ul className="menu dropdown-content z-1 space-y-1 text-sm p-0 bg-base-100">
         {templates.map((template) => (
           <li
-            className="cursor-pointer transition-colors duration-300 hover:bg-slate-300/40"
+            className="w-full cursor-pointer transition-colors duration-300 hover:bg-slate-500/40 p-1"
             key={template.id}
             onClick={() => handleClick(template.file)}
           >
@@ -46,4 +46,5 @@ export const TemplatesComponent = () => {
     </details>
   )
 }
+
 

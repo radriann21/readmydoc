@@ -11,7 +11,7 @@ export const PreviewContainer = () => {
 
   const handleCopy = async () => {
     navigator.clipboard.writeText(markdown);
-    toast("README copied to clipboard.", {
+    toast("Text copied to clipboard.", {
       position: "bottom-center",
       style: { backgroundColor: "#33ad2f", color: "#ffffff" },
     })
@@ -19,7 +19,7 @@ export const PreviewContainer = () => {
 
   return (
     <section className="w-[50%] h-full border-l-1 border-slate-300">
-      <div className="py-1 px-4 flex items-center justify-between bg-slate-100">
+      <div className="py-1 px-4 flex items-center justify-between bg-base-300">
         <h3 className="uppercase tracking-wider text-sm">Preview</h3>
         <div className="flex items-center space-x-4">
           <button onClick={resetMarkdown} className="tooltip tooltip-bottom cursor-pointer" data-tip="Refresh">
