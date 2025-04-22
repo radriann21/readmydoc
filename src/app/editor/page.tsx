@@ -1,22 +1,19 @@
-"use client"
+"use client";
 
-import { Header } from "./components/Header";
+// import { TemplatesComponent } from "./components/TemplatesComponent";
+// import { Toaster } from "react-hot-toast";
+
+import { Header } from "../editor/components/Header";
 import { EditorComponent } from "./components/EditorComponent";
 import { PreviewContainer } from "./components/PreviewContainer";
-import { TemplatesComponent } from "./components/TemplatesComponent";
-import { Toaster } from "react-hot-toast";
 
 export default function EditorPage() {
   return (
-    <main className="max-w-full mx-auto h-[85vh] font-cabin">
-      <Toaster />
+    <main className="max-w-full mx-auto h-screen font-cabin overflow-hidden">
       <Header />
-      <section className="w-full h-full flex">
-        <TemplatesComponent />
-        <section className="w-full h-full flex">
-          <EditorComponent />
-          <PreviewContainer />
-        </section>
+      <section className="w-full flex items-center h-screen">
+        <EditorComponent />
+        <PreviewContainer />
       </section>
     </main>
   )
