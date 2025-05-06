@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export const Hero = () => {
   return (
-    <section className="w-full flex items-center justify-center mt-48">
-      <div className="text-center w-[60%]">
-        <h2 className="font-bold text-5xl">
+    <section className="w-full flex items-center justify-center mt-16 lg:mt-32 h-[60vh] lg:h-auto px-4 md:px-0">
+      <div className="text-center w-full lg:w-[60%]">
+        <h2 className="font-bold text-3xl md:text-5xl">
           The easy way to create a README just with some clicks.
         </h2>
         <p className="my-4 text-gray-500 text-lg">
