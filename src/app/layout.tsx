@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Cabin } from "next/font/google";
 import { MardownEditorProvider } from "@/providers/MarkdownEditorStoreProvider";
 import "./globals.css";
-import "github-markdown-css/github-markdown-light.css"
+import "github-markdown-css/github-markdown-dark.css"
 
 const cabin = Cabin({
   variable: "--font-cabin",

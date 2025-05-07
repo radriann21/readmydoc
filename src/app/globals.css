@@ -1,8 +1,10 @@
 @import "tailwindcss";
+@source "../../node_modules/github-markdown-css/github-markdown-dark.css";
 
 @plugin "daisyui" {
   themes: light --default, dark;
 }
+
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark]));
 
 @theme {
