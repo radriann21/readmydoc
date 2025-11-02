@@ -18,7 +18,7 @@ export const PreviewContainer = () => {
   }
 
   return (
-    <section className="w-[50%] h-full border-l-1 border-slate-300">
+    <section className="w-[50%] h-screen border-l-1 border-slate-300 overflow-y-auto">
       <div className="py-1 px-4 flex items-center justify-between bg-base-300">
         <h3 className="uppercase tracking-wider text-sm">Preview</h3>
         <div className="flex items-center space-x-4">

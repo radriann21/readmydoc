@@ -1,8 +1,9 @@
 import { createStore } from "zustand/vanilla";
+import { createJSONStorage, persist } from "zustand/middleware";
 
 export type MarkdownEditorState = {
   markdown: string;
-  documentTitle: string
+  documentTitle: string;
 }
 
 export type MarkdownEditorActions = {
@@ -23,10 +24,20 @@ export const initMarkdownEditorStore = (): MarkdownEditorState => {
 }
 
 export const createMarkdownEditorStore = (initState: MarkdownEditorState = defaultInitialState) => {
-  return createStore<MarkdownEditorStore>()((set) => ({
-    ...initState,
-    setMarkdown: (markdown) => set({ markdown }),
-    resetMarkdown: () => set({ markdown: "" }),
-    setDocumentTitle: (title: string) => set({ documentTitle: title }),
-  }))
+
+  return createStore<MarkdownEditorStore>()(
+    persist(
+      (set) => ({
+        ...initState,
+        setMarkdown: (markdown) => set({ markdown }),
+        resetMarkdown: () => set({ markdown: "" }),
+        setDocumentTitle: (title: string) => set({ documentTitle: title }),
+      }),
+      {
+        name: "markdown-store",
+        storage: createJSONStorage(() => localStorage),
+        partialize: (state) => ({ markdown: state.markdown, documentTitle: state.documentTitle })
+      }
+    )
+  )
 }

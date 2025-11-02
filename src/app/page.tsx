@@ -1,13 +1,17 @@
 import { Header } from "@/components/Header";
-import { Hero } from "@/components/Hero";
-import { InfoSection } from "@/components/InfoSection";
+import { Toaster } from "react-hot-toast";
+import { EditorComponent } from "@/components/EditorComponent";
+import { PreviewContainer } from "@/components/PreviewContainer";
 
 export default function Home() {
   return (
-    <main className="max-w-full md:max-w-7xl mx-auto h-screen font-cabin">
+    <main className="max-w-full mx-auto h-screen font-cabin overflow-hidden">
+      <Toaster />
       <Header />
-      <Hero />
-      <InfoSection />
+      <section className="w-full flex items-center h-screen">
+        <EditorComponent />
+        <PreviewContainer />
+      </section>
     </main>
   );
 }
