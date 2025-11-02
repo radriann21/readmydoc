@@ -8,7 +8,7 @@ export const MarkdownComponent = () => {
 
   return (
     <div
-      className="markdown-body p-2 h-screen"
+      className="markdown-body p-2 overflow-y-auto max-h-screen"
     >
       <Markdown remarkPlugins={[remarkGfm]}>
         {markdown}
