@@ -5,8 +5,7 @@ import { TemplatesComponent } from "./TemplatesComponent"
 
 export const EditorComponent = () => {
 
-  const setMarkdown = useMarkdownEditorContext((state) => state.setMarkdown)
-  const markdown = useMarkdownEditorContext((state) => state.markdown)
+  const { markdown, setMarkdown, actualView, setActualView } = useMarkdownEditorContext((state) => state)
 
   const handleEditorChange = (value: string | undefined) => {
     if (value !== undefined) {
@@ -15,9 +14,9 @@ export const EditorComponent = () => {
   }
 
   return (
-    <section className="h-full w-[50%] border-none">
+    <section className={`h-full w-full md:w-[50%] border-none md:block ${actualView === "preview" ? "hidden" : ""}`}>
       <div className="py-1 px-4 flex items-center justify-between bg-base-300">
-        <h3 className="uppercase tracking-wider text-sm">Markdown</h3>
+        <h3 onClick={() => setActualView("preview")} className="uppercase tracking-wider text-sm cursor-pointer">Markdown</h3>
         <TemplatesComponent />
       </div>
       <Editor 

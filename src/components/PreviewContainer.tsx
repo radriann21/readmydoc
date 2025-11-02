@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 
 export const PreviewContainer = () => {
 
-  const { resetMarkdown, markdown } = useMarkdownEditorContext(state => state)
+  const { resetMarkdown, markdown, actualView, setActualView } = useMarkdownEditorContext(state => state)
 
   const handleCopy = async () => {
     navigator.clipboard.writeText(markdown);
@@ -18,9 +18,9 @@ export const PreviewContainer = () => {
   }
 
   return (
-    <section className="w-[50%] h-screen border-l-1 border-slate-300">
+    <section className={`w-full md:w-[50%] h-screen border-l-1 border-slate-300 md:block ${actualView === "preview" ? "" : "hidden"}`}>
       <div className="py-1 px-4 flex items-center justify-between bg-base-300">
-        <h3 className="uppercase tracking-wider text-sm">Preview</h3>
+        <h3 onClick={() => setActualView("editor")} className="uppercase tracking-wider text-sm cursor-pointer">Preview</h3>
         <div className="flex items-center space-x-4">
           <button onClick={resetMarkdown} className="tooltip tooltip-bottom cursor-pointer" data-tip="Refresh">
             <RefreshCcw className="w-4 h-4 ml-1 stroke-blue-400" />

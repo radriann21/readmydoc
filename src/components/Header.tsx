@@ -1,6 +1,6 @@
 "use client";
 import { useMarkdownEditorContext } from "@/providers/MarkdownEditorStoreProvider";
-import { File, ArrowLeft } from "lucide-react";
+import { File } from "lucide-react";
 import { DownloadButton } from "./DownloadButton";
 import Link from "next/link";
 
@@ -10,9 +10,6 @@ export const Header = () => {
   return (
     <header className="w-full flex items-center justify-between py-4 px-5 md:px-8">
       <section className="flex items-center">
-        <Link href="/">
-          <ArrowLeft className="w-4 h-4 sm:hidden" />
-        </Link>
         <div className="hidden sm:block">
           <h1 className="uppercase text-lg tracking-wider">
             <Link

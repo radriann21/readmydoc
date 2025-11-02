@@ -8,7 +8,7 @@ export default function Home() {
     <main className="max-w-full mx-auto h-screen font-cabin overflow-hidden">
       <Toaster />
       <Header />
-      <section className="w-full flex items-center h-screen">
+      <section className="w-full flex flex-col md:flex-row items-center h-screen">
         <EditorComponent />
         <PreviewContainer />
       </section>

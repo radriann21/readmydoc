@@ -4,23 +4,26 @@ import { createJSONStorage, persist } from "zustand/middleware";
 export type MarkdownEditorState = {
   markdown: string;
   documentTitle: string;
+  actualView: "editor" | "preview";
 }
 
 export type MarkdownEditorActions = {
   setMarkdown: (markdown: string) => void;
   resetMarkdown: () => void;
   setDocumentTitle: (title: string) => void;
+  setActualView: (view: "editor" | "preview") => void;
 }
 
 export type MarkdownEditorStore = MarkdownEditorState & MarkdownEditorActions;
 
 export const defaultInitialState: MarkdownEditorState = {
   markdown: "# Welcome to Readmydoc!",
-  documentTitle: "Document"
+  documentTitle: "Document",
+  actualView: "editor"
 }
 
 export const initMarkdownEditorStore = (): MarkdownEditorState => {
-  return { markdown: "# Welcome to Readmydoc!", documentTitle: "Document" }
+  return { markdown: "# Welcome to Readmydoc!", documentTitle: "Document", actualView: "editor" }
 }
 
 export const createMarkdownEditorStore = (initState: MarkdownEditorState = defaultInitialState) => {
@@ -32,11 +35,12 @@ export const createMarkdownEditorStore = (initState: MarkdownEditorState = defau
         setMarkdown: (markdown) => set({ markdown }),
         resetMarkdown: () => set({ markdown: "" }),
         setDocumentTitle: (title: string) => set({ documentTitle: title }),
+        setActualView: (view: "editor" | "preview") => set({ actualView: view }),
       }),
       {
         name: "markdown-store",
         storage: createJSONStorage(() => localStorage),
-        partialize: (state) => ({ markdown: state.markdown, documentTitle: state.documentTitle })
+        partialize: (state) => ({ markdown: state.markdown, documentTitle: state.documentTitle, actualView: state.actualView })
       }
     )
   )
